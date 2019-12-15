@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".InActivity">
+
+    <LinearLayout
+        android:id="@+id/llHomePage"
+        android:layout_width="411dp"
+        android:layout_height="614dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/sy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--
+    该 LinearLayout 为主体页面布局的容器，你也可以根据需要换成其他形式的 Layout
+    以上代码将页面布局容器和底部的导航栏进行了约束
+    即该容器的底端和导航栏的顶端彼此约束
+    确保该容器的占用空间不会覆盖导航栏
+    页面的主体布局请在该容器内部（即此处）创建
+    -->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="@android:color/holo_blue_dark"
+            android:gravity="center"
+            android:text="选票界面"
+            android:textSize="35dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="586dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="92dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="78dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:text="城市1"
+                    android:textSize="25dp" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:text="↔"
+                    android:textSize="50dp" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="77dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:text="城市2"
+                    android:textSize="25dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:gravity="center"
+                android:text="出发时间"
+                android:textSize="30dp" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="87dp"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/goupiao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:background="#94E0DADA"
+                android:text="购买车票" />
+
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="match_parent"
+                android:layout_height="268dp"
+                android:layout_weight="1"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 以下为导航栏的布局 -->
+    <LinearLayout
+        android:id="@+id/s"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llHomePage">
+
+        <!-- 【主页】活动中，【主页】按钮设为已激活样式，注意 drawableTop 和 textColor 属性的值 -->
+
+        <!-- 其他按钮设为未激活样式，注意 drawableTop 和 textColor 属性的值 -->
+        <ImageButton
+            android:id="@+id/sy"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="7dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:onClick="onNavButtonsTapped"
+            android:text="@string/btnNavHome"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:background="@drawable/sy"/>
+
+        <ImageButton
+            android:id="@+id/gr"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/gr"
+            android:onClick="onNavButtonsTapped"
+            android:text="@string/btnNavMessage"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </LinearLayout>
+</LinearLayout>

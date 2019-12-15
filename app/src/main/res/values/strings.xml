@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">zhucedenglu</string>
+    <string name="title_activity_inn">InnActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- 这个是我们新添加的字符串 -->
+    <string name="dlgExitMsg">确定要退出吗？</string>
+
+    <!-- 顺便把之后要用到的字符串也一并准备了 -->
+    <string name="btnNavHome">首页</string>
+    <string name="btnNavMessage">个人</string>
+</resources>

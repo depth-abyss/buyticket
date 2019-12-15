@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".InActivity">
+
+    <LinearLayout
+        android:id="@+id/llHomePage"
+        android:layout_width="411dp"
+        android:layout_height="614dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/sy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--
+该 LinearLayout 为主体页面布局的容器，你也可以根据需要换成其他形式的 Layout
+以上代码将页面布局容器和底部的导航栏进行了约束
+即该容器的底端和导航栏的顶端彼此约束
+确保该容器的占用空间不会覆盖导航栏
+页面的主体布局请在该容器内部（即此处）创建
+-->
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:background="@android:color/holo_blue_dark"
+            android:gravity="center"
+            android:text="个人中心"
+            android:textSize="40dp" />
+
+
+        <EditText
+            android:id="@+id/my"
+            android:layout_width="386dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="25dp"
+            android:hint="输入昵称"/>
+
+
+        <Button
+            android:id="@+id/tj"
+            android:layout_width="100dp"
+            android:layout_height="3dp"
+            android:layout_marginLeft="300dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:text="提交" />
+
+        <TextView
+            android:id="@+id/bb"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="20dp"
+            android:text="版本"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/gy"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginLeft="20dp"
+            android:text="关于"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="275dp"
+            android:text=" " />
+
+    </LinearLayout>
+<!-- 以下为导航栏的布局 -->
+ <LinearLayout
+    android:id="@+id/s"
+    style="?android:attr/buttonBarStyle"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/s">
+
+    <!-- 【主页】活动中，【主页】按钮设为已激活样式，注意 drawableTop 和 textColor 属性的值 -->
+
+    <!-- 其他按钮设为未激活样式，注意 drawableTop 和 textColor 属性的值 -->
+    <ImageButton
+        android:id="@+id/sy"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="7dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:onClick="onNavButtonsTapped"
+        android:background="@drawable/sy"/>
+
+    <ImageButton
+        android:id="@+id/gr"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/gr"
+        android:onClick="onNavButtonsTapped" />
+
+</LinearLayout>
+
+</LinearLayout>
